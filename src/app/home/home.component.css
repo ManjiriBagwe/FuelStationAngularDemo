@@ -1,0 +1,27 @@
+.c-secondary-nav__item {
+    min-height: 48px;
+    border-bottom: 1px solid #e9e9e9;
+    position: relative;
+}
+
+.c-secondary-nav__link {
+    padding-right: 10px;
+    padding-left: 10px;
+    line-height: 48px;
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 48px;
+    text-transform: uppercase;
+    transition: 0.15s color ease-out;
+    color: #000;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.f-alert-success {
+    color: black;
+    background-color: skyblue;
+    border-color: black;
+}

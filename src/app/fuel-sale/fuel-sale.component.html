@@ -1,0 +1,72 @@
+<br><!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fuel Sale</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-default" >
+    <div class="container-fluid">
+      
+      <ul class="nav navbar-nav">
+        <li class="active"><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/fuel-sale-upload">Add Fuel Sale</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div class="row">
+        <div id="custom-search-input">
+          <div class="input-group col-md-12" style="text-align: center">
+            <input class="form-control" required type="date" [(ngModel)]="selectedDate" name="selectedSaleDate" id="selectedSaleDate" placeholder="Sale Date"/>
+            <button mat-raised-button (click)="onSubmit()">Submit</button>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+<mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" matPaginator class="mat-elevation-z8">
+
+  <ng-container matColumnDef="grade">
+   
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Grade</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.grade}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="volume">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Volume</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.volume}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="sale">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Sale</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.sale}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="profit">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Profit</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.profit}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="margin">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Margin</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.margin}}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+ 
+ 
+</mat-table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+
+
+</body>
+</html>

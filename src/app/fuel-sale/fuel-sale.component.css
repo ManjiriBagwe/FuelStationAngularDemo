@@ -1,0 +1,97 @@
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+
+  body {
+    padding-top:0px;
+}
+fieldset {
+    border: thin solid #ccc; 
+    border-radius: 4px;
+    padding: 20px;
+    padding-left: 40px;
+    background: #fbfbfb;
+}
+legend {
+   color: #678;
+}
+.form-control {
+    width: 95%;
+}
+label small {
+    color: #678 !important;
+}
+span.req {
+    color:maroon;
+    font-size: 112%;
+}
+
+mat-form-field {
+  margin-right: 12px;
+}
+
+
+
+#custom-search-input {
+  margin:0;
+  margin-top: 24px;
+  padding: 2px;
+}
+.col-md-12 {
+  width: 62%;
+}
+#custom-search-input .search-query {
+  padding-right: 3px;
+  padding-right: 4px \9;
+  padding-left: 3px;
+  padding-left: 4px \9;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 43px;
+}
+
+#custom-search-input button {
+  border: 0;
+  background: none;
+  /** belows styles are working good */
+  padding: 2px 5px;
+  margin-top: 2px;
+  position: relative;
+  left: -28px;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color:green;
+}
+
+.search-query:focus + button {
+  z-index: 3;  
+}
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+  padding-right: 0px;
+  padding-left: 183px;
+}

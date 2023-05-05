@@ -1,0 +1,85 @@
+<br><!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Fuel Sale</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" id="bootstrap-css">
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-default" >
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a routerLink="/home">Home</a></li>
+                    <li><a routerLink="/fuel-sale">Fuel Sale</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div style="text-align: center">
+            <h1>{{message}}</h1>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <form>
+                        <fieldset>
+                            <legend class="text-center">Valid information is <span class="req"><small>required </small></span>to upload sale data. </legend>
+
+                            <div class="form-group">
+                                <label for="Grade"><span class="req">* </span> Grade : </label>
+                                <select [(ngModel)]="fuelSaleForm.grade" name="grade" id="grade" class="form-control phone" maxlength="28" placeholder="Enter grade">
+                                    <option *ngFor="let option of fuelGradeList" [value]="option.name">{{option.name}}</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Volume"><span class="req">* </span> Volume : </label>
+                                <input class="form-control" type="number" [(ngModel)]="fuelSaleForm.volume" name="volume" id="volume" placeholder="Enter Volume" required />
+                                <div id="errFirst"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Sale"><span class="req">* </span> Sale : </label>
+                                <input class="form-control" type="number" [(ngModel)]="fuelSaleForm.sale" name="sale" id="sale" placeholder="Enter Sale" required />
+                                <div id="errFirst"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Profit"><span class="req">* </span> Profit : </label>
+                                <input class="form-control" type="number" [(ngModel)]="fuelSaleForm.profit" name="profit" id="profit" placeholder="Enter Profit" required />
+                                <div id="errLast"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Margin"><span class="req">* </span> Margin : </label>
+                                <input class="form-control" type="number" [(ngModel)]="fuelSaleForm.margin" name="margin" id="margin" placeholder="Enter Margin" required />
+                                <div class="status" id="status"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="saledate"><span class="req">* </span> Sale Date : </label>
+                                <input class="form-control" type="date" [(ngModel)]="fuelSaleForm.saledate" name="saledate" id="saledate" placeholder="Sale Date" required/>
+                                <div class="status" id="status"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input class="btn btn-success" type="submit" name="submit_reg" value="Add" (click)="onSubmit()">
+                                &nbsp; &nbsp;
+                                <input class="btn btn-success" type="submit" name="cancel_reg" value="Cancel" (click)="goBack()">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
